@@ -140,13 +140,18 @@ FROM movie JOIN casting ON movie.id = movieid
 WHERE ord = 1 AND director = 351
 SELECT dept.name
 FROM teacher JOIN dept ON (dept.id = teacher.dept)
-WHERE teacher.name = 'Cutflower'
+WHERE teacher.name = 'Cutflower';
 SELECT dept.name, COUNT(teacher.name)
 FROM teacher RIGHT JOIN dept ON dept.id = teacher.dept
 GROUP BY dept.name
 SELECT DISTINCT a.name, b.name
-FROM stops a JOIN route z  IN a.id=z.stop
+FROM stops a JOIN route z   IN a.id=z.stop
   JOIN route y ON y.num = z.num
   JOIN stops b 
 IN y.stop=b.id
- WHERE a.name='Craiglockhart' AND b.name ='Haymarket'
+ WHERE a.name='Craiglockhart' AND b.name ='Haymarket';
+SELECT S2.id, S2.name, R2.company, R2.num
+FROM stops S1, stops S2, route R1, route R2
+WHERE S1.name='Haymarket' AND S1.id=R1.stop
+  AND R1.company=R2.company AND R1.num=R2.num
+  AND R2.stop=S2.id AND R2.num='2A';
