@@ -92,3 +92,8 @@ FROM bbc x
 WHERE 50000 < ALL (SELECT population
 FROM bbc y
 WHERE x.region=y.region AND y.population>0);
+SELECT name, region
+FROM bbc x
+WHERE population < ALL (SELECT population/3
+FROM bbc y
+WHERE y.region = x.region AND y.name != x.name)
