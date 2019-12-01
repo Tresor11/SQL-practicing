@@ -101,4 +101,4 @@ SELECT name
 FROM bbc
 WHERE gdp > (SELECT MAX(gdp)
 FROM bbc
-WHERE region = 'Africa')
+WHERE region = 'Africa');
