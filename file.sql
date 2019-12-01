@@ -138,3 +138,6 @@ SELECT name
 FROM movie JOIN casting ON movie.id = movieid
   JOIN actor ON actor.id = actorid
 WHERE ord = 1 AND director = 351
+SELECT dept.name
+FROM teacher JOIN dept ON (dept.id = teacher.dept)
+WHERE teacher.name = 'Cutflower'
