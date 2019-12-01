@@ -105,3 +105,6 @@ WHERE region = 'Africa');
 SELECT SUM(population)
 FROM bbc
 WHERE region = 'Europe';
+SELECT region, SUM(population)/SUM(area) AS density
+FROM bbc
+GROUP BY region;
