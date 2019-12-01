@@ -112,3 +112,8 @@ SELECT name, population/area AS density
 FROM bbc
 WHERE population = (SELECT MAX(population)
 FROM bbc);
+SELECT player, teamid, COUNT(*)
+FROM game JOIN goal ON matchid = id
+WHERE (team1 = "GRE" OR team2 = "GRE")
+  AND teamid != 'GRE'
+GROUP BY player, teamid
