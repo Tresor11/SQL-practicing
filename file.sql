@@ -60,3 +60,6 @@ WHERE name = 'United Kingdom';
 SELECT name, population / 10
 FROM world
 WHERE population < 10000;
+SELECT name, population
+FROM world
+WHERE continent IN ('Europe', 'Asia');
