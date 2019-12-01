@@ -35,3 +35,12 @@ FROM
   world
 WHERE
   population = 64000
+SELECT
+  name,
+  area,
+  population
+FROM
+  world
+WHERE
+  area > 50000
+  AND population < 10000000
