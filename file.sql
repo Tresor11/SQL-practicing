@@ -119,4 +119,9 @@ WHERE (team1 = "GRE" OR team2 = "GRE")
 GROUP BY player, teamid;
 SELECT DISTINCT teamid, mdate
 FROM goal JOIN game on (matchid=id)
-WHERE mdate = '9 June 2012'
+WHERE mdate = '9 June 2012';
+SELECT DISTINCT player, teamid
+FROM game JOIN goal ON matchid = id
+WHERE stadium = 'National Stadium, Warsaw'
+  AND (team1 = 'POL' OR team2 = 'POL')
+  AND teamid != 'POL'
