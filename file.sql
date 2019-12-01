@@ -63,3 +63,8 @@ WHERE population < 10000;
 SELECT name, population
 FROM world
 WHERE continent IN ('Europe', 'Asia');
+SELECT COUNT(DISTINCT yr)
+FROM nobel
+WHERE yr NOT IN (SELECT DISTINCT yr
+FROM nobel
+WHERE subject = 'Medicine');
