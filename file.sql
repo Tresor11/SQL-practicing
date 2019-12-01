@@ -82,3 +82,8 @@ WHERE subject='Medicine'
   AND yr NOT IN (SELECT yr
   FROM nobel
   WHERE subject='Peace');
+SELECT region, name, population
+FROM bbc x
+WHERE population <= ALL (SELECT population
+FROM bbc y
+WHERE y.region=x.region AND population>0);
