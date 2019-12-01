@@ -134,3 +134,7 @@ FROM casting JOIN actor ON actorid=actor.id
 WHERE name LIKE 'John %'
 GROUP BY name
 ORDER BY 2 DESC
+SELECT name
+FROM movie JOIN casting ON movie.id = movieid
+  JOIN actor ON actor.id = actorid
+WHERE ord = 1 AND director = 351
