@@ -102,3 +102,6 @@ FROM bbc
 WHERE gdp > (SELECT MAX(gdp)
 FROM bbc
 WHERE region = 'Africa');
+SELECT SUM(population)
+FROM bbc
+WHERE region = 'Europe';
