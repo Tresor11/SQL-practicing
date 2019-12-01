@@ -116,4 +116,7 @@ SELECT player, teamid, COUNT(*)
 FROM game JOIN goal ON matchid = id
 WHERE (team1 = "GRE" OR team2 = "GRE")
   AND teamid != 'GRE'
-GROUP BY player, teamid
+GROUP BY player, teamid;
+SELECT DISTINCT teamid, mdate
+FROM goal JOIN game on (matchid=id)
+WHERE mdate = '9 June 2012'
