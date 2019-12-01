@@ -144,3 +144,9 @@ WHERE teacher.name = 'Cutflower'
 SELECT dept.name, COUNT(teacher.name)
 FROM teacher RIGHT JOIN dept ON dept.id = teacher.dept
 GROUP BY dept.name
+SELECT DISTINCT a.name, b.name
+FROM stops a JOIN route z  IN a.id=z.stop
+  JOIN route y ON y.num = z.num
+  JOIN stops b 
+IN y.stop=b.id
+ WHERE a.name='Craiglockhart' AND b.name ='Haymarket'
