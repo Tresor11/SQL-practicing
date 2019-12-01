@@ -128,4 +128,9 @@ WHERE stadium = 'National Stadium, Warsaw'
 SELECT DISTINCT player, teamid, gtime
 FROM game JOIN goal ON matchid = id
 WHERE stadium = 'Stadion Miejski (Wroclaw)'
-  AND (( teamid = team2 AND team1 != 'ITA') OR ( teamid = team1 AND team2 != 'ITA'))
+  AND (( teamid = team2 AND team1 != 'ITA') OR ( teamid = team1 AND team2 != 'ITA'));
+SELECT name, COUNT(movieid)
+FROM casting JOIN actor ON actorid=actor.id
+WHERE name LIKE 'John %'
+GROUP BY name
+ORDER BY 2 DESC
