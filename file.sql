@@ -57,3 +57,6 @@ WHERE name LIKE 'U%';
 SELECT population
 FROM world
 WHERE name = 'United Kingdom';
+SELECT name, population / 10
+FROM world
+WHERE population < 10000;
