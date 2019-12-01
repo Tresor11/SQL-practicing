@@ -96,4 +96,9 @@ SELECT name, region
 FROM bbc x
 WHERE population < ALL (SELECT population/3
 FROM bbc y
-WHERE y.region = x.region AND y.name != x.name)
+WHERE y.region = x.region AND y.name != x.name);
+SELECT name
+FROM bbc
+WHERE gdp > (SELECT MAX(gdp)
+FROM bbc
+WHERE region = 'Africa')
