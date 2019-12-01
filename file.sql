@@ -28,3 +28,10 @@ FROM
 WHERE
   length(name) = 5
   and region = 'Europe'
+SELECT
+  name,
+  area * 2
+FROM
+  world
+WHERE
+  population = 64000
