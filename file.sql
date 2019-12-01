@@ -124,4 +124,8 @@ SELECT DISTINCT player, teamid
 FROM game JOIN goal ON matchid = id
 WHERE stadium = 'National Stadium, Warsaw'
   AND (team1 = 'POL' OR team2 = 'POL')
-  AND teamid != 'POL'
+  AND teamid != 'POL';
+SELECT DISTINCT player, teamid, gtime
+FROM game JOIN goal ON matchid = id
+WHERE stadium = 'Stadion Miejski (Wroclaw)'
+  AND (( teamid = team2 AND team1 != 'ITA') OR ( teamid = team1 AND team2 != 'ITA'))
