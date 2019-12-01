@@ -108,3 +108,7 @@ WHERE region = 'Europe';
 SELECT region, SUM(population)/SUM(area) AS density
 FROM bbc
 GROUP BY region;
+SELECT name, population/area AS density
+FROM bbc
+WHERE population = (SELECT MAX(population)
+FROM bbc);
